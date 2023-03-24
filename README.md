@@ -1,1 +1,25 @@
 # OLS-on-IQ-Multiple
+library(Hmisc)
+library(memisc)
+library(haven)
+q1a=lm(lwage~educ+IQ, data = wage2)
+mtable(q1a)
+q1c=lm(IQ~educ, data = wage2)
+mtable(q1c)
+q1b=lm(lwage~educ, data = wage2)
+mtable(q1b)
+mtable(q1a,q1b,q1c)
+q2a.1=lm(wage96~height85, data = hwagemw)
+q2a.2=lm(wage96~height85+height81, data = hwagemw)
+mtable(q2a.1,q2a.2)
+m1=lm(wage~educ+IQ, data=wage2)
+m2=lm(wage~educ,data=wage2)
+m3=lm(IQ~educ, data=wage2)
+mtable(m1,m2,m3)
+q2a.1$coefficients[2]+q2a.2.2$coefficients[3]*q2a.2$coefficients[2]
+
+q2a.2.1=lm(wage96~height85+height81, data= hwagemw[hwagemw$male==1, ])
+mtable(q2a.2.1)
+q2a.2.2=lm(wage96~height85+height81, data= hwagemw[hwagemw$male==0, ])
+mtable(q2a.2.1,q2a.2.2)
+
